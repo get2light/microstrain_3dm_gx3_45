@@ -92,14 +92,6 @@ bool imuNode::init() {
 
 	}
 	
-	ROS_INFO("Checking status");
-	if (!imu_->devStatus()) {
-
-		printErrMsgs("Checking status");
-		return false;
-
-	}
-
 	ROS_INFO("Setting to idle");
 	if (!imu_->setToIdle()) {
 
