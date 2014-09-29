@@ -296,8 +296,9 @@ bool IMU::pollGPS() {
 	uint16_t flags = /*((uint16_t)recv[6+40])<<2 | */(uint16_t)recv[4+41];
 
 	gps_data_.lat_lon_valid = (flags & 0x1);
-	gps_data_.hor_acc_valid = (flags & (0x1<<5));
-
+	//gps_data_.hor_acc_valid = (flags & (0x1<<5));
+	gps_data_.hor_acc_valid = (flags & (0x1<<3));
+	
 	return true;
 }
 
